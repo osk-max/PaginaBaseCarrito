@@ -12,4 +12,21 @@ function eventosAddListener() {
 }
 
 //Funciones
-function agregarClase(e) {}
+function agregarClase(e) {
+  e.preventDefault();
+  if (e.target.classList.contains("agregar-carrito")) {
+    const divClase = e.target.parentElement.parentElement;
+    extraerDatos(divClase);
+  }
+}
+
+function extraerDatos(clase) {
+  // Objeto de los datos donde doy click "agregar-carro"
+  const datosClase = {
+    imagen: clase.querySelector("img").src,
+    nombre: clase.querySelector("h4").textContent,
+    precio: clase.querySelector(".precio span").textContent,
+    id: clase.querySelector("a").getAttribute("data-id")
+  };
+  console.log(datosClase);
+}
