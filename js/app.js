@@ -12,23 +12,4 @@ function eventosAddListener() {
 }
 
 //Funciones
-function agregarClase(e) {
-  e.preventDefault();
-  if (e.target.classList.contains("agregar-carrito")) {
-    const divPadre = e.target.parentElement.parentElement;
-    informacionClase(divPadre);
-  }
-}
-
-function informacionClase(clase) {
-  console.log(clase);
-
-  // Objeto con la informacion donde doy click
-  const objDatosClase = {
-    imagen: clase.querySelector("img").src,
-    nombre: clase.querySelector("h4").textContent,
-    precio: clase.querySelector(".precio span").textContent,
-    id: clase.querySelector("a").getAttribute("data-id")
-  };
-  console.log(objDatosClase);
-}
+function agregarClase(e) {}
